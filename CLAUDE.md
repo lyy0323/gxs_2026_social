@@ -39,6 +39,29 @@ git commit -m "你做了什么"
 git push
 ```
 
+### 环境检查（每次新用户首次交互时主动执行）
+
+用户可能完全没装过 Git 和 gh。在开始任何工作前，主动跑以下检查，缺什么装什么：
+
+```bash
+# 1. Git 是否可用
+git --version        # 没有 → macOS: xcode-select --install / Windows: 引导安装 Git for Windows
+
+# 2. gh CLI 是否可用
+gh --version         # 没有 → macOS: brew install gh / Windows: winget install GitHub.cli
+
+# 3. gh 是否已登录
+gh auth status       # 未登录 → 引导用户跑 gh auth login，选 GitHub.com → HTTPS → 浏览器授权
+
+# 4. 仓库是否已克隆
+ls gxs_2026_social   # 没有 → git clone https://github.com/lyy0323/gxs_2026_social.git
+
+# 5. Git 用户名/邮箱是否配置
+git config user.name && git config user.email   # 没有 → git config --global user.name "名字" && git config --global user.email "邮箱"
+```
+
+不要一次性把所有命令甩给用户。每一步检查完再决定下一步，遇到报错就地解决。
+
 ### 其他成员工作流
 ```
 git pull
