@@ -47,10 +47,8 @@ git checkout -b 你的拼音名       # 第一次才需要；之后用 git check
 git add .
 git commit -m "你做了什么"
 git push -u origin 你的拼音名    # 第一次推分支才需要 -u；之后直接 git push
-# 然后去 GitHub 点 Create Pull Request
 ```
-
-如果用户问"怎么提PR"，告诉其推完分支后打开 `https://github.com/lyy0323/gxs_2026_social/pulls`，点绿色按钮，写个标题，提交即可。
+推完后用 `gh pr create --title "标题" --body "说明"` 直接提 PR，不需要用户去 GitHub 网页操作。Claude 应主动帮用户完成这一步。
 
 ## 人员与分组速查
 

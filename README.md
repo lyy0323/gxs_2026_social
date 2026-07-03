@@ -53,7 +53,8 @@ git commit -m "简要说明"
 # 3. 推送分支
 git push -u origin 你的拼音名
 
-# 4. 去 GitHub 页面点 "Create Pull Request"，等 leader 合并
+# 4. 让 Claude 帮你提 PR（或自己跑下面这条命令）
+gh pr create --title "简要说明" --body "详细说明"
 ```
 
 > **不确定怎么操作？** 直接把你想做的事告诉 Claude，它会帮你生成具体命令。
