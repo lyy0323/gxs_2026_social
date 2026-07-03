@@ -36,6 +36,20 @@
 │   ├── 2024国学社姑苏吴韵成果册.pdf
 │   ├── 2025思源沂蒙情成果册.pdf
 │   └── 2025思源沂蒙情实践纪实.zip
-└── workspace/          ← 个人工作目录
-    └── yuye/           林雨夜 — 带队导师 / 技术负责人
+└── workspace/              ← 个人工作目录
+    ├── yuye/               林雨夜 — 带队 / 技术负责人
+    ├── huatong/            花桐 — 带队 / 技术组导师
+    ├── guanghanjushi/      广寒居士 — 带队 / 宣传组导师
+    ├── zhouqinggui/        周庆贵 — 讲座主持人
+    ├── limingrui/          李明睿 — 带队
+    ├── wangziyue/          王子越 — 队长
+    ├── mingrui/            明睿 — 技术组
+    ├── xingshuqi/          邢书旗 — 技术组
+    ├── huyuxuan/           胡宇轩 — 技术组
+    ├── linyuan/            林源 — 组织组
+    ├── lutaoyu/            卢陶雨 — 组织组
+    ├── chenlinghong/       陈凌弘 — 宣传组
+    ├── wuxiang/            吴响 — 宣传组
+    ├── zhoutianyu/         周天宇 — 宣传组（借调）
+    └── gongzijing/         宫梓菁 — 后勤组
 ```
