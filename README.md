@@ -68,9 +68,9 @@ git push
 |----|------|-----------|
 | 林雨夜 | leader / 技术负责人 / 讲座主讲 | `workspace/yuye/` |
 | 花桐 | leader / 技术组 | `workspace/huatong/` |
-| 广寒居士 | leader / 宣传组 | `workspace/guanghanjushi/` |
+| 广寒居士 | leader / 组织后勤组（与周庆贵老师共同带队） | `workspace/guanghanjushi/` |
 | 李明睿 | leader | `workspace/limingrui/` |
-| 周庆贵 | 思源图书馆馆长 / 总带队老师 / 讲座主持人 | `workspace/zhouqinggui/` |
+| 周庆贵 | 思源图书馆馆长 / 总带队老师 / 讲座主持人 / 组织后勤组（与广寒共同带队） | `workspace/zhouqinggui/` |
 
 ### 技术组
 | 人 | workspace | 实践期间重点 |
@@ -79,11 +79,12 @@ git push
 | 邢书旗 | `workspace/xingshuqi/` | 思源图书馆数字化调研 |
 | 胡宇轩 | `workspace/huyuxuan/` | 配合明睿做产品演示 |
 
-### 组织组
+### 组织后勤组（原组织组+后勤组合并，广寒/周老师带队）
 | 人 | workspace | 实践期间重点 |
 |----|-----------|------------|
 | 林源 | `workspace/linyuan/` | 对外联络、讲座/参访流程把控 |
 | 卢陶雨 | `workspace/lutaoyu/` | 现场执行、签到引导、时间控制 |
+| 宫梓菁 | `workspace/gongzijing/` | 餐饮/交通/住宿对接 |
 
 ### 宣传组
 | 人 | workspace | 实践期间重点 |
@@ -91,11 +92,6 @@ git push
 | 陈凌弘 | `workspace/chenlinghong/` | 主摄影、讲座直拍 |
 | 吴响 | `workspace/wuxiang/` | 每日图文推送、成果册主笔 |
 | 周天宇 | `workspace/zhoutianyu/` | 副摄影、vlog素材（从技术组借调） |
-
-### 后勤组
-| 人 | workspace | 实践期间重点 |
-|----|-----------|------------|
-| 宫梓菁 | `workspace/gongzijing/` | 餐饮/交通/住宿对接 |
 
 ### 队长
 | 人 | workspace | 备注 |
@@ -111,7 +107,6 @@ git push
 | `CLAUDE.md` | Agent 指令文件，Claude 自动读取 |
 | `工作拆分草案.md` | 各组任务拆分、技术组策略、行程对比 |
 | `2026行程安排.txt` | 完整行程 |
-| `20260703142600-社会实践选人.md` | 人员评估与住宿安排 |
 | `上级要求/` | 结项材料要求、安全须知等 |
 | `往年/` | 2024–2025 成果册和实践纪实 |
 
