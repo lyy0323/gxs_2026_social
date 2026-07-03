@@ -37,11 +37,11 @@
 │   ├── 2025思源沂蒙情成果册.pdf
 │   └── 2025思源沂蒙情实践纪实.zip
 └── workspace/              ← 个人工作目录
-    ├── yuye/               林雨夜 — 带队 / 技术负责人
-    ├── huatong/            花桐 — 带队 / 技术组导师
-    ├── guanghanjushi/      广寒居士 — 带队 / 宣传组导师
-    ├── zhouqinggui/        周庆贵 — 讲座主持人
-    ├── limingrui/          李明睿 — 带队
+    ├── yuye/               林雨夜 — leader / 技术负责人
+    ├── huatong/            花桐 — leader / 技术组
+    ├── guanghanjushi/      广寒居士 — leader / 宣传组
+    ├── zhouqinggui/        周庆贵 — 思源图书馆馆长 / 总带队老师 / 讲座主持人
+    ├── limingrui/          李明睿 — leader
     ├── wangziyue/          王子越 — 队长
     ├── mingrui/            明睿 — 技术组
     ├── xingshuqi/          邢书旗 — 技术组
