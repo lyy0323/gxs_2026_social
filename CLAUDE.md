@@ -22,15 +22,35 @@
 
 ## 用户不会 Git 时的标准指引
 
+**先判断用户是否为 collaborator。** Collaborator 可以直接推 main，其他人必须走分支+PR。
+
+Collaborator 列表（有 write 权限）：
+- lyy0323（林雨夜）
+- MingruiLiBigCat（李明睿）
+- guanghanjushi（广寒居士）
+- zhiyuan-251
+
+### Collaborator 工作流
 ```
-拉取最新：  git pull
-查看状态：  git status
-暂存文件：  git add .
-提交说明：  git commit -m "你做了什么"
-推送远程：  git push
+git pull
+# ...工作...
+git add .
+git commit -m "你做了什么"
+git push
 ```
 
-如果用户遇到冲突，先 `git stash`，再 `git pull`，再 `git stash pop`，然后解释冲突内容让用户选择保留哪个版本。
+### 其他成员工作流
+```
+git pull
+git checkout -b 你的拼音名       # 第一次才需要；之后用 git checkout 你的拼音名
+# ...工作...
+git add .
+git commit -m "你做了什么"
+git push -u origin 你的拼音名    # 第一次推分支才需要 -u；之后直接 git push
+# 然后去 GitHub 点 Create Pull Request
+```
+
+如果用户问"怎么提PR"，告诉其推完分支后打开 `https://github.com/lyy0323/gxs_2026_social/pulls`，点绿色按钮，写个标题，提交即可。
 
 ## 人员与分组速查
 

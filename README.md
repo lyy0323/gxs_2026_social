@@ -32,15 +32,28 @@ git pull
 
 ### 写完东西后提交
 
+**如果你是 collaborator（林雨夜/李明睿/广寒居士/zhiyuan-251）**，直接推 main：
+
 ```bash
-# 1. 把你改的文件加入暂存区
 git add .
-
-# 2. 写一句话说明你做了什么
 git commit -m "简要说明，比如：添加7月4日活动照片"
-
-# 3. 推送到远程
 git push
+```
+
+**如果你是其他团队成员**，请创建分支再提 PR：
+
+```bash
+# 1. 创建你的分支（用你的名字，只需做一次）
+git checkout -b 你的拼音名
+
+# 2. 正常提交
+git add .
+git commit -m "简要说明"
+
+# 3. 推送分支
+git push -u origin 你的拼音名
+
+# 4. 去 GitHub 页面点 "Create Pull Request"，等 leader 合并
 ```
 
 > **不确定怎么操作？** 直接把你想做的事告诉 Claude，它会帮你生成具体命令。
