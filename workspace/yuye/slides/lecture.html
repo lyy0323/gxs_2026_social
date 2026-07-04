@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI时代与诗性思维</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
+    background: #fff;
+    color: #1a1a1a;
+    overflow: hidden;
+    height: 100vh;
+  }
+
+  .slide {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    padding: 8vh 10vw;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .slide.active { display: flex; }
+
+  .slide-scroll {
+    overflow-y: auto;
+    max-height: 80vh;
+    padding-right: 1em;
+  }
+
+  .slide-scroll::-webkit-scrollbar { width: 4px; }
+  .slide-scroll::-webkit-scrollbar-thumb { background: #ccc; border-radius: 2px; }
+
+  /* Title slide */
+  .slide.title-slide {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .slide.title-slide h1 {
+    font-size: 3.2em;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.6em;
+  }
+
+  .slide.title-slide .subtitle {
+    font-size: 1.3em;
+    color: #666;
+    letter-spacing: 0.1em;
+  }
+
+  /* Section headers */
+  h1 {
+    font-size: 2.4em;
+    font-weight: 700;
+    margin-bottom: 0.8em;
+    letter-spacing: 0.05em;
+  }
+
+  h2 {
+    font-size: 1.6em;
+    font-weight: 700;
+    margin-bottom: 0.6em;
+    color: #333;
+  }
+
+  p, li {
+    font-size: 1.15em;
+    line-height: 2;
+    color: #333;
+  }
+
+  ul { list-style: none; padding-left: 0; }
+  ul li::before { content: "· "; color: #999; }
+
+  /* Keyword grid */
+  .keywords {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3em;
+    margin-top: 2em;
+    text-align: center;
+  }
+
+  .keyword {
+    font-size: 2.6em;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: #1a1a1a;
+    padding: 0.5em 0;
+    border-bottom: 2px solid #e0e0e0;
+  }
+
+  /* Two column */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4em;
+    margin-top: 1.5em;
+  }
+
+  .col h3 {
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-bottom: 0.8em;
+    color: #666;
+    letter-spacing: 0.05em;
+  }
+
+  .col p { font-size: 1.05em; line-height: 1.9; }
+
+  /* Poetry */
+  .poem-block {
+    margin: 1.5em 0;
+    padding: 1.5em 2em;
+    border-left: 3px solid #ddd;
+    background: #fafafa;
+  }
+
+  .poem-block .poem-title {
+    font-size: 1.1em;
+    font-weight: 700;
+    margin-bottom: 0.8em;
+    color: #555;
+  }
+
+  .poem-block .poem-line {
+    font-size: 1.1em;
+    line-height: 2.2;
+    color: #1a1a1a;
+  }
+
+  .poem-block .poem-note {
+    font-size: 0.85em;
+    color: #888;
+    margin-top: 0.5em;
+    line-height: 1.7;
+  }
+
+  .poem-intro {
+    font-size: 1.05em;
+    line-height: 2;
+    color: #555;
+    margin-bottom: 1.5em;
+    max-width: 50em;
+  }
+
+  /* Highlight */
+  em { font-style: normal; color: #c0392b; }
+
+  /* Zong text */
+  .zong {
+    font-size: 1.6em;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-align: center;
+    color: #333;
+    padding: 1em 0;
+    border: 1px solid #eee;
+    margin: 0.5em 0;
+  }
+
+  /* Contact */
+  .contact {
+    text-align: center;
+    margin-top: 2em;
+  }
+
+  .contact p {
+    font-size: 1.2em;
+    line-height: 2.2;
+    color: #555;
+  }
+
+  /* Page number */
+  .page-num {
+    position: fixed;
+    bottom: 2vh;
+    right: 3vw;
+    font-size: 0.85em;
+    color: #bbb;
+  }
+
+  /* Fullscreen adjustments */
+  :fullscreen .slide { padding: 6vh 8vw; }
+</style>
+</head>
+<body>
+
+<!-- ======== 1. 封面 ======== -->
+<div class="slide title-slide active" id="s1">
+  <h1>AI时代与诗性思维</h1>
+  <div class="subtitle">林雨夜 · 上海交通大学国学社</div>
+  <div class="subtitle" style="margin-top:0.5em; font-size:1em; color:#999;">2026年7月4日 · 思源图书馆</div>
+</div>
+
+<!-- ======== 2. 自我介绍 ======== -->
+<div class="slide" id="s2">
+  <h1>自我介绍</h1>
+  <div class="slide-scroll">
+    <p><strong>林雨夜</strong> · 2002 · 上海</p>
+    <br>
+    <p>上海交通大学 安泰经济与管理学院<br>2020 本科 → 2024 硕士</p>
+    <br>
+    <p>上海市科学学研究所 · 产业创新研究员<br>
+    字节跳动 · Seedream 模型策略产品经理<br>
+    MINIMAX · 模型策略 PM · 创意写作</p>
+  </div>
+</div>
+
+<!-- ======== 3. 核心锚点 ======== -->
+<div class="slide" id="s3">
+  <h1>AI时代，人的核心锚点是什么？</h1>
+  <div class="keywords">
+    <div class="keyword">生命力</div>
+    <div class="keyword">感知力</div>
+    <div class="keyword">判断力</div>
+    <div class="keyword">审美能力</div>
+  </div>
+</div>
+
+<!-- ======== 4. AI生成诗歌判断 ======== -->
+<div class="slide" id="s4">
+  <h1>AI生成诗歌：现状</h1>
+  <div class="two-col">
+    <div class="col">
+      <h3>普通人视角</h3>
+      <p><em>已难以分辨</em></p>
+    </div>
+    <div class="col">
+      <h3>专家视角</h3>
+      <p>出律 · 文义不通</p>
+      <p style="margin-top:1em;">格律 → harness 可解<br><span style="color:#999;">EMNLP 2026: 100% 格律精准率</span></p>
+      <p style="margin-top:1em;">文义 → 前沿模型逐步补足</p>
+    </div>
+  </div>
+</div>
+
+<!-- ======== 5. 人去往何方 ======== -->
+<div class="slide" id="s5">
+  <h1>人去往何方？</h1>
+  <div class="slide-scroll">
+    <div class="zong">传承经典文化 · 分享人生阅历 · 包容多元思想</div>
+    <p style="text-align:center; color:#999; margin-bottom:2em;">— 国学社宗旨</p>
+    <p>八股取士意义 → <em>弱化</em></p>
+    <br>
+    <p>个人意志的表达 · 阅历的留档 → <em>空前重要</em></p>
+  </div>
+</div>
+
+<!-- ======== 6. 雨季八首 ======== -->
+<div class="slide" id="s6">
+  <h1>雨季八首</h1>
+  <p class="poem-intro">散文章法写诗 · 毕业季 · 2024年6月</p>
+  <div class="slide-scroll">
+
+    <div class="poem-block">
+      <div class="poem-title">其一</div>
+      <div class="poem-line">夹道青杉木气蒸，行过灯晕不分明。</div>
+      <div class="poem-line">江头栀子映波影，南汇西瓜叫卖声。</div>
+      <div class="poem-line">雨季频年湿心事，云山经岁损浮生。</div>
+      <div class="poem-line">凝眸暗想橱窗里，一束芳华初剪成。</div>
+      <div class="poem-note">家父最爱栀子。</div>
+    </div>
+
+    <div class="poem-block">
+      <div class="poem-title">其二</div>
+      <div class="poem-line">芳华初剪织初成，寂夜荒城烛一灯。</div>
+      <div class="poem-line">寒是单衣半遮骨，泪因微火不融冰。</div>
+      <div class="poem-line">中洲沉水日分寸，南浦登山雨永恒。</div>
+      <div class="poem-line">歧路断肠谁复解，当时曾想最高层。</div>
+      <div class="poem-note">「中洲」典出《中洲引》。尾联「歧路」云云亦言此事。</div>
+    </div>
+
+    <div class="poem-block">
+      <div class="poem-title">其三</div>
+      <div class="poem-line">街灯新点凯旋门，徙倚湿枝连有根。</div>
+      <div class="poem-line">树到四年虫尽蠹，云过半夏雨多痕。</div>
+      <div class="poem-line">投桃未冀琼瑶报，怀璧终甘蛱蝶温。</div>
+      <div class="poem-line">想象琴声与栀子，曾同缱绻在黄昏。</div>
+    </div>
+
+    <div class="poem-block">
+      <div class="poem-title">其四</div>
+      <div class="poem-line">黄浦吴淞舛复并，于今追忆扑流萤。</div>
+      <div class="poem-line">来时道路可能识，别后烟尘或许经。</div>
+      <div class="poem-line">眼底熟梅垂的的，风中涩梦缀荧荧。</div>
+      <div class="poem-line">玉兰苑外无声水，曾映相逢牛女星。</div>
+      <div class="poem-note">黄浦、吴淞同出太湖，各自奔流，于外白渡桥重汇于一。</div>
+    </div>
+
+    <div class="poem-block">
+      <div class="poem-title">其五</div>
+      <div class="poem-line">行过思源折柳枝，水灯依约泛波时。</div>
+      <div class="poem-line">岁寒频改佳节日，卜吉得全清赏期。</div>
+      <div class="poem-line">彩影欢喧人往重，长街笑闹我来迟。</div>
+      <div class="poem-line">明年嘉会复何处？白鸟嘤鸣未可知。</div>
+    </div>
+
+    <div class="poem-block">
+      <div class="poem-title">其六</div>
+      <div class="poem-line">踏歌致远草曾春，记得蒲公英绊身。</div>
+      <div class="poem-line">两颗海珠萦渐渐，一倾昆玉系频频。</div>
+      <div class="poem-line">交游已绝休回首，岁月从来不等人。</div>
+      <div class="poem-line">今倚石阶仍在水，为谁脂粉正新匀。</div>
+      <div class="poem-note">昆玉，INFJ × INFJ。</div>
+    </div>
+
+    <div class="poem-block">
+      <div class="poem-title">其七</div>
+      <div class="poem-line">重到樟林一舞风，年年三月看新红。</div>
+      <div class="poem-line">觉时蓝白真成忆，梦后苍青已向东。</div>
+      <div class="poem-line">无泪铁窗飞絮柳，有情薄酒染花桐。</div>
+      <div class="poem-line">最怜踏雨主图夕，铭在低吟浅唱中。</div>
+      <div class="poem-note">蓝白，云《春日漫兴八首次韵（其六）》：蔽躯层白或腴肉，隔面新蓝半掩愁。</div>
+    </div>
+
+    <div class="poem-block">
+      <div class="poem-title">其八</div>
+      <div class="poem-line">雨湿白襟人影移，华筵狼藉各将归。</div>
+      <div class="poem-line">红男绿女等闲散，袅水流灯取次稀。</div>
+      <div class="poem-line">锦瑟柱弦从此绝，银河星月有时违。</div>
+      <div class="poem-line">风铃未解别离意，犹向长亭款款飞。</div>
+      <div class="poem-note">蔡琴《最后一夜》：「走不完红男绿女 / 看不尽人海沉浮」。</div>
+    </div>
+
+    <p class="poem-intro" style="margin-top:1.5em;">八首一体 · 移步换景 · 感官→隐忧→回忆→离散</p>
+  </div>
+</div>
+
+<!-- ======== 7. 浦江四首 ======== -->
+<div class="slide" id="s7">
+  <h1>浦江四首</h1>
+  <p class="poem-intro">小说章法写诗 · 女性纪实 · 次修逸澄池韵</p>
+  <div class="slide-scroll">
+    <div class="poem-block">
+      <div class="poem-title">其一</div>
+      <div class="poem-line">浦江潮信晚来平。似是初逢水绕菁。</div>
+      <div class="poem-line">小辫双梳飞燕过，高楼一立海云生。</div>
+      <div class="poem-line">伫时珠玉迎人瀑，行处虹霓掠眼明。</div>
+      <div class="poem-line">想象十年须负箧，浦江潮上逐群英。</div>
+    </div>
+
+    <div class="poem-block">
+      <div class="poem-title">其二</div>
+      <div class="poem-line">浦江潮上逐群英。十八芳华水一泓。</div>
+      <div class="poem-line">不必殷勤扶小弟，真能驰骋在高城。</div>
+      <div class="poem-line">无涯闻道四年短，有爱萦身双泪横。</div>
+      <div class="poem-line">老父伤寒忽催返，浦江潮落送归程。</div>
+    </div>
+
+    <div class="poem-block">
+      <div class="poem-title">其三</div>
+      <div class="poem-line">浦江潮落送归程。换得村头贤淑名。</div>
+      <div class="poem-line">古井投心葬魂断，红绡掩面许婚成。</div>
+      <div class="poem-line">堂中家令困多事，枕上雏啼恨有情。</div>
+      <div class="poem-line">忽梦当时自由处，浦江潮咽说前盟。</div>
+    </div>
+
+    <div class="poem-block">
+      <div class="poem-title">其四</div>
+      <div class="poem-line">浦江潮咽说前盟。梦渐醒时渐失声。</div>
+      <div class="poem-line">俯仰每成朝露泫，春秋不复晓星晴。</div>
+      <div class="poem-line">久羁里巷柴米黯，重到外滩云海轻。</div>
+      <div class="poem-line">小女初逢似如故，浦江潮信晚来平。</div>
+    </div>
+
+    <p class="poem-intro" style="margin-top:1.5em;">尾句蝉联首句 · 回环结构 · 少女→大学→归乡→重逢</p>
+  </div>
+</div>
+
+<!-- ======== 8. 过期糖果 ======== -->
+<div class="slide" id="s8">
+  <h1>「过期糖果」</h1>
+  <p class="poem-intro">国学社同题创作</p>
+  <div class="slide-scroll">
+    <p>（现场展示同题作品选）</p>
+  </div>
+</div>
+
+<!-- ======== 9. 当代古典诗人精神面貌 ======== -->
+<div class="slide" id="s9">
+  <h1>当代古典诗人的精神面貌</h1>
+  <div class="slide-scroll">
+    <p>（小结）</p>
+  </div>
+</div>
+
+<!-- ======== 10. 开发者视角 ======== -->
+<div class="slide" id="s10">
+  <h1>开发者视角</h1>
+  <p class="poem-intro">AI → 技术 → 创作者社群</p>
+  <div class="slide-scroll">
+    <br>
+    <h2>南洋吟游</h2>
+    <p>7100+ 作品 · 267万+ PV</p>
+    <p style="color:#999; font-size:0.95em;">sjtuguoxue.space</p>
+    <br>
+    <h2>方寸</h2>
+    <p>创作画布 · 不是生成器</p>
+    <p style="color:#999; font-size:0.95em;">write.sjtuguoxue.space</p>
+    <br>
+    <h2>格律检测 API</h2>
+    <p>出律 → 定位 → 建议替换</p>
+    <p style="color:#999; font-size:0.95em;">checker.sjtuguoxue.space</p>
+    <br>
+    <p style="font-size:1.3em; margin-top:1em;"><em>更好的笔</em>，不是自己会写字的笔。</p>
+  </div>
+</div>
+
+<!-- ======== 11. 致谢 ======== -->
+<div class="slide title-slide" id="s11">
+  <h1>谢谢</h1>
+  <div class="contact">
+    <p>林雨夜</p>
+    <p>上海交通大学国学社</p>
+    <p style="margin-top:1em; color:#999;">sjtuguoxue.space</p>
+  </div>
+</div>
+
+<!-- Page number -->
+<div class="page-num" id="pageNum">1 / 11</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let current = 0;
+
+  function show(n) {
+    slides[current].classList.remove('active');
+    current = Math.max(0, Math.min(n, slides.length - 1));
+    slides[current].classList.add('active');
+    document.getElementById('pageNum').textContent = (current + 1) + ' / ' + slides.length;
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
+      e.preventDefault(); show(current + 1);
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      e.preventDefault(); show(current - 1);
+    } else if (e.key === 'f' || e.key === 'F') {
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+      else document.exitFullscreen();
+    }
+  });
+
+  // Touch support
+  let touchStartX = 0;
+  document.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; });
+  document.addEventListener('touchend', e => {
+    const diff = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(diff) > 50) show(current + (diff < 0 ? 1 : -1));
+  });
+
+  // Click to advance (except on scroll areas)
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.slide-scroll')) show(current + 1);
+  });
+</script>
+
+</body>
+</html>
